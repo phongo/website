@@ -68,11 +68,15 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-
     <div class="container theme-showcase" role="main">
         <div class="col-md-6" font size="20">
-          <table class="table table-striped" id="mytable" font size="20">
+          <table class="table" id="mytable" font size="20" >
             <thead>
+              <tr>
+                <th colspan = "4">
+                  Search: <input size = "100%" autofocus="autofocus" id = "searchbar">
+                </th>
+              </tr>
               <tr>
                 <th>Dish_id</th>
                 <th>Name</th>
@@ -83,31 +87,52 @@
             <tbody>
               <tr>
                 <td>1</td>
-                <td>大肉包</td>
-                <td>7.5</td>
-                <td><select id="course_quant1"><option>0</option><option>1</option><option>2</option></select></td>
+                <td>Rib-eye dry</td>
+                <td>38</td>
+                <td><input id="course_quant1"></td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>小肉包</td>
-                <td>4</td>
-                <td><select id="course_quant2"><option>0</option><option>1</option><option>2</option></select></td>
-
+                <td>Rib-eye wet</td>
+                <td>36</td>
+                <td><input id="course_quant2"></td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>绿豆汁</td>
-                <td>5</td>
-                <td><select id="course_quant3"><option>0</option><option>1</option><option>2</option></select></td>
-
+                <td>NY dry</td>
+                <td>40</td>
+                <td><input id="course_quant3"></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Filet Oscar</td>
+                <td>48</td>
+                <td><input id="course_quant4"></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+    <div class="container theme-showcase" role="main">
+        <div class="col-md-6" font size="20">
+          <table class="table" id="ordertable" font size="20">
+            <thead>
+              <tr>
+                <th>Dish_id</th>
+                <th>Name</th>
+                <th>Total Price</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+    </div>
     <p>
-      <button type="button" class="container btn btn-lg btn-default" onclick = "genqrcode();">Submit</button>
+      <button type="button" class="container btn btn-lg btn-default" onclick = "addorder();">Add to Order (enter)</button>
+      <button type="button" class="container btn btn-lg btn-default" onclick = "genqrcode();">Submit (Ctrl + enter)</button>
     </p>
     <div class="container" id = "confirmation"></div>
     <div class="container" id = "qrcode"></div>

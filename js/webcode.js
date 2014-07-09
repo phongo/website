@@ -107,7 +107,7 @@ function genqrcode(){
         sum += quantity * price
     }
     prompt_array = JSON.parse(jsonstring_order);
-    prompt = "You ordered <br><br>"
+    prompt = "Dear Customer, <br><br>You ordered <br><br>"
     for (x in prompt_array) {
     	prompt += prompt_array[x]["quantity"] + ' ' + prompt_array[x]["name"] + '<br>'
     }

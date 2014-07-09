@@ -114,6 +114,10 @@
         </div>
       </div>
     </div>
+    <p>
+      <button type="button" class="container btn btn-lg btn-default" onclick = "addorder();">Add to Order (enter)</button>
+      <button type="button" class="container btn btn-lg btn-default" onclick = "genqrcode();">Submit (Ctrl + enter)</button>
+    </p>
     <div class="container theme-showcase" role="main">
         <div class="col-md-6" font size="20">
           <table class="table" id="ordertable" font size="20">
@@ -130,10 +134,6 @@
           </table>
         </div>
     </div>
-    <p>
-      <button type="button" class="container btn btn-lg btn-default" onclick = "addorder();">Add to Order (enter)</button>
-      <button type="button" class="container btn btn-lg btn-default" onclick = "genqrcode();">Submit (Ctrl + enter)</button>
-    </p>
     <div class="container" id = "confirmation"></div>
     <div class="container" id = "qrcode"></div>
     <script src="js/webcode.js"></script>

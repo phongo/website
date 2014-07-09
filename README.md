@@ -1,6 +1,6 @@
 READEME.md
 
-Ray Xiao, Victor Chao
+Ray Xiao, Victor Chao, Daniel Griffin
 
 7/5/14
 

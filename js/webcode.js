@@ -46,7 +46,7 @@ function addorder(){
         }
     }           
     jsonstring_order+=']'
-    console.log(jsonstring_order)
+    //console.log(jsonstring_order)
     order_array = JSON.parse(jsonstring_order)
 
     
@@ -131,7 +131,7 @@ function genqrcode(){
 cursor_pos = 0
 
 document.getElementById("searchbar").addEventListener("paste", function(event) {
-    console.log("paste");
+    //console.log("paste");
 
 });
 document.addEventListener("keydown", function(event) {
@@ -162,7 +162,7 @@ document.getElementById("searchbar").addEventListener("keyup", function(event) {
             }
 
             menustring+=']'
-            console.log(menustring)
+            //console.log(menustring)
             loadtable();
             cursor_pos=0
         } else {
@@ -215,7 +215,7 @@ function keyup(){
         while(cursor_pos<0){
             cursor_pos+=tableheight-1;
         }
-        console.log("cursor_pos:" + cursor_pos)
+        //console.log("cursor_pos:" + cursor_pos)
         //table.rows[(indexarray[cursor_pos+1])%(indexarray.length)].style.background = "#FFFFFF";
         //table.rows[(indexarray[cursor_pos])%(indexarray.length)].style.background = "#FFBF00";
         if(indexarray.length>1){
@@ -250,11 +250,11 @@ function keydown_render(){
             indexarray.push(i);
         }          
     }
-    console.log(indexarray)
+    //console.log(indexarray)
     while(cursor_pos<0){
         cursor_pos+=tableheight-1;
     }
-    console.log("cursor_pos:" + cursor_pos)
+   // console.log("cursor_pos:" + cursor_pos)
     //table.rows[(indexarray[cursor_pos+1])%(indexarray.length)].style.background = "#FFFFFF";
     //table.rows[(indexarray[cursor_pos])%(indexarray.length)].style.background = "#FFBF00";
     if(indexarray.length>1){
@@ -297,13 +297,13 @@ function loadtable(){
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
-        console.log(menu_array[x])
+        //console.log(menu_array[x])
         // Add some text to the new cells:
         cell1.innerHTML = x
         cell2.innerHTML = menu_array[x]["name"];
         menuprice = menu_array[x]["price"];
         cell3.innerHTML = menuprice
-        console.log(menuprice)
+        //console.log(menuprice)
         thisinputbox = 'course_quant' + (Number(x) + 1)
         //console.log(thisinputbox)
         cell4.innerHTML = '<input id="'+thisinputbox + '"">'

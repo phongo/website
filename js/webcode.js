@@ -78,8 +78,15 @@ function addorder(){
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
+    cell1.innerHTML = "Tax"
+    cell3.innerHTML = Math.round(total_amount * 6.25)/100
+    var row = tbody.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
     cell1.innerHTML = "Total"
-    cell3.innerHTML = total_amount
+    cell3.innerHTML = Math.round(total_amount * 106.25)/100 
     cursor_pos = 0
     document.getElementById('searchbar').focus();
     document.getElementById('searchbar').value = ""
@@ -106,6 +113,8 @@ function genqrcode(){
     for (x in prompt_array) {
     	prompt += prompt_array[x]["quantity"] + '个 ' + prompt_array[x]["name"] + ';'
     }
+    tax = Number(Math.round(sum * 6.25)/100)
+    sum += tax
     prompt += "\nthe total is: " + sum + ". Please scan the QR code below to pay"
     document.getElementById("confirmation").innerHTML = prompt
     //query = 'https://venmo.com/?txn=pay&recipients=ray-xiao&amount='+sum+'&note=nice food!! We had '+prompt_array["quantity"] + ' awesome ' + prompt_array["name"] +'!!Yummy!!&audience=private'

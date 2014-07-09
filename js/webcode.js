@@ -107,14 +107,14 @@ function genqrcode(){
         sum += quantity * price
     }
     prompt_array = JSON.parse(jsonstring_order);
-    prompt = "You had "
+    prompt = "You ordered <br><br>"
     for (x in prompt_array) {
-    	prompt += prompt_array[x]["quantity"] + ' ' + prompt_array[x]["name"] + ';'
+    	prompt += prompt_array[x]["quantity"] + ' ' + prompt_array[x]["name"] + '<br>'
     }
     tax = Number((sum * 0.0625).toFixed(2));
     sum += tax
     sum = sum.toFixed(2)
-    prompt += "\nthe total is: " + sum + ". Please scan the QR code below to pay"
+    prompt += "<br>the total is: " + sum + ".<br> Please scan the QR code below to pay<br>"
     document.getElementById("confirmation").innerHTML = prompt
     //query = 'https://venmo.com/?txn=pay&recipients=ray-xiao&amount='+sum+'&note=nice food!! We had '+prompt_array["quantity"] + ' awesome ' + prompt_array["name"] +'!!Yummy!!&audience=private'
 

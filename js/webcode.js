@@ -169,8 +169,8 @@ document.getElementById("searchbar").addEventListener("keyup", function(event) {
             loadtable();
             cursor_pos=0
         } else {
-            //menustring = totalmenustring
-            //loadtable();
+            menustring = '[]'
+            loadtable();
         }
     }
 });

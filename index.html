@@ -45,12 +45,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" text ="#FFFFFF">Phongo</a>
+          <a class="navbar-brand" href="#" style="color:#FFBF00">Phongo</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Ordering</a></li>
-            <li><a href="#about">Generate Menu</a></li>
+            <li><a href="menumaker.html">Generate Menu</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -83,6 +83,7 @@
                 <th>Price</th>
                 <th>Quantity</th>
               </tr>
+
             </thead>
             <tbody>
 <!--               <tr>
@@ -115,13 +116,22 @@
       </div>
     </div>
     <p>
-      <button type="button" class="container btn btn-lg btn-default" onclick = "addorder();">Add to Order (enter)</button>
-      <button type="button" class="container btn btn-lg btn-default" onclick = "genqrcode();">Submit (Ctrl + enter)</button>
+
+           
     </p>
     <div class="container theme-showcase" role="main">
-        <div class="col-md-6" font size="20">
-          <table class="table" id="ordertable" font size="20">
+        <div class="col-md-6">
+          <table class="table" id="ordertable">
             <thead>
+              <tr>
+                <th colspan = 4>
+                  <button type="button" class="container btn btn-lg btn-default" onclick = "addorder();">Add to Order (Enter)</button>
+
+                <button type="button" class="container btn btn-lg btn-default" onclick = "genqrcode();">Submit (Ctrl + Enter)</button>
+              </tr>
+              <tr >
+                <th colspan=4>Orders</th>
+              </tr>
               <tr>
                 <th>Dish_id</th>
                 <th>Name</th>

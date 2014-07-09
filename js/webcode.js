@@ -16,7 +16,7 @@ function addorder(){
 
         var name = table.rows[r+1].cells[1].innerHTML
 
-        sum += quantity * price
+        sum += (quantity * price).toFixed(2)
 
         if (quantity != 0) {
 
@@ -33,7 +33,7 @@ function addorder(){
                     break;
                 }
             }
-            console.log(jsonstring_order)
+           // console.log(jsonstring_order)
             if (exist==0){
                 jsonstring_order=jsonstring_order.slice(0,-1)
                 if ( jsonstring_order != "[" ){
@@ -68,7 +68,7 @@ function addorder(){
         // Add some text to the new cells:
         cell1.innerHTML = "id"
         cell2.innerHTML = order_array[x]["name"];
-        orderprice = order_array[x]["quantity"]*order_array[x]["price"];
+        orderprice = (order_array[x]["quantity"]*order_array[x]["price"]).toFixed(2);
         cell3.innerHTML = orderprice
         cell4.innerHTML = order_array[x]["quantity"];  
         total_amount += orderprice
@@ -87,14 +87,11 @@ function addorder(){
     var cell4 = row.insertCell(3);
     cell1.innerHTML = "Total"
     cell3.innerHTML = Math.round(total_amount * 106.25)/100 
-    cursor_pos = 0
     document.getElementById('searchbar').focus();
     document.getElementById('searchbar').value = ""
     table = document.getElementById('mytable');
-    table.rows[2+cursor_pos%(table.rows.length-2)].style.background = "#FFFFFF";
-    
-
-
+    //table.rows[indexarray[(cursor_pos)%indexarray.length]].style.background = "#FFFFFF";
+    cursor_pos = 0
 }
 
 function genqrcode(){
@@ -146,9 +143,9 @@ document.getElementById("searchbar").addEventListener("keyup", function(event) {
 
     if (event.keyCode != 38 && event.keyCode != 40){
         searchstring = document.getElementById('searchbar').value
-        console.log(searchstring)
+        //console.log(searchstring)
         totalmenu_array = JSON.parse(totalmenustring)
-        console.log(totalmenustring)
+        //console.log(totalmenustring)
         menustring = '['
         if (searchstring !="") {
             for (x in totalmenu_array) {
@@ -298,11 +295,13 @@ function loadtable(){
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
+        console.log(menu_array[x])
         // Add some text to the new cells:
         cell1.innerHTML = x
         cell2.innerHTML = menu_array[x]["name"];
         menuprice = menu_array[x]["price"];
         cell3.innerHTML = menuprice
+        console.log(menuprice)
         thisinputbox = 'course_quant' + (Number(x) + 1)
         //console.log(thisinputbox)
         cell4.innerHTML = '<input id="'+thisinputbox + '"">'

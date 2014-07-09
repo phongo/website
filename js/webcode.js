@@ -93,25 +93,14 @@ function addorder(){
 function genqrcode(){
     var table = document.getElementById('mytable');
     sum=0
-    jsonstring="["
-
-    for (var r = 1, n = table.rows.length-1; r < n; r++) {
-        thisid = "course_quant"+r
+    prompt_array = JSON.parse(jsonstring_order);
+    for (x in prompt_array) {
         //console.log(thisid)
-        quantity = Number(document.getElementById(thisid).value)
-        price = Number(table.rows[r+1].cells[2].innerHTML)
-        name = table.rows[r+1].cells[1].innerHTML
+        quantity = prompt_array[x]["quantity"]
+        price = prompt_array[x]["price"]
+        name = prompt_array[x]["name"]
         sum += quantity * price
-
-        if (quantity != 0) {
-        	if ( jsonstring != "[" ){
-        		jsonstring += ","
-        	}
-            jsonstring += '{"name":"' + name +'","quantity":'+quantity+ ',"price":'+price +'}'
-            //alert(jsonstring)
-		}
     }
-    jsonstring+=']'
     prompt_array = JSON.parse(jsonstring_order);
     prompt = "You had "
     for (x in prompt_array) {

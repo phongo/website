@@ -71,22 +71,23 @@ function addorder(){
         orderprice = (order_array[x]["quantity"]*order_array[x]["price"]).toFixed(2);
         cell3.innerHTML = orderprice
         cell4.innerHTML = order_array[x]["quantity"];  
-        total_amount += orderprice
+        total_amount += Number(orderprice)
     }
     var row = tbody.insertRow(-1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
+    //console.log(total_amount)
     cell1.innerHTML = "Tax"
-    cell3.innerHTML = Math.round(total_amount * 6.25)/100
+    cell3.innerHTML = (Number(total_amount)*0.0625).toFixed(2)
     var row = tbody.insertRow(-1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     cell1.innerHTML = "Total"
-    cell3.innerHTML = Math.round(total_amount * 106.25)/100 
+    cell3.innerHTML = (total_amount*1.0625).toFixed(2)
     document.getElementById('searchbar').focus();
     document.getElementById('searchbar').value = ""
     table = document.getElementById('mytable');

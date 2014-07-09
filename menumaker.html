@@ -74,69 +74,21 @@
             <thead>
               <tr>
                 <th colspan = "4">
-                  <input size = "100%" placeholder = "Search id, dishes...oh well this won't work now lol"autofocus="autofocus" id = "searchbar">
+                  <textarea  id="menubox" size = "100%" rows="10" cols="100" placeholder = "Drop Menu text here to load. Format as one Item with the price at end of line without a dollar sign."autofocus="autofocus" id = "loadmenu"></textarea>
                 </th>
               </tr>
-              <tr>
-                <th>Dish_id</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Rib-eye dry</td>
-                <td>38</td>
-                <td><input id="course_quant1"></td>
+              <tr class="center">
+                <td colspan = "4"><button id="menuload">Load</button>
               </tr>
               <tr>
-                <td>2</td>
-                <td>Rib-eye wet</td>
-                <td>36</td>
-                <td><input id="course_quant2"></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>NY dry</td>
-                <td>40</td>
-                <td><input id="course_quant3"></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Filet Oscar</td>
-                <td>48</td>
-                <td><input id="course_quant4"></td>
+                <div id="menujson">Menu</div>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-    <div class="container theme-showcase" role="main">
-        <div class="col-md-6" font size="20">
-          <table class="table" id="ordertable" font size="20">
-            <thead>
-              <tr>
-                <th>Dish_id</th>
-                <th>Name</th>
-                <th>Total Price</th>
-                <th>Quantity</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-    </div>
-    <p>
-      <button type="button" class="container btn btn-lg btn-default" onclick = "addorder();">Add to Order (enter)</button>
-      <button type="button" class="container btn btn-lg btn-default" onclick = "genqrcode();">Submit (Ctrl + enter)</button>
-    </p>
-    <div class="container" id = "confirmation"></div>
-    <div class="container" id = "qrcode"></div>
-    <script src="js/webcode.js"></script>
+    <script src="js/menumaker.js"></script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

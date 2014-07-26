@@ -1,13 +1,15 @@
 jsonstring_order="["
-$("tr").on("swiperight",function(){
+$("#mytable").on("swiperight","tr",function(){
   this.style.backgroundColor='#0F0';
 });
-$("tr").on("swipeleft",function(){
-  this.style.backgroundColor='#00F';
+$("#mytable").on("swipeleft","tr",function(){
+  this.style.backgroundColor='#F00';
 });
-$( "tr" ).on( "click", function() {
-    this.style.backgroundColor='#FFF';
-} )
+$("#mytable").on("touchend","tr",function(){
+  this.style.backgroundColor='#FFF';
+});
+
+
 function addorder(){
     var table = document.getElementById('mytable');
     var sum=0

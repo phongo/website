@@ -1,4 +1,7 @@
 jsonstring_order="["
+$("input").on("swiperight",function(){
+  console.log("right")
+});
 function addorder(){
     var table = document.getElementById('mytable');
     var sum=0
@@ -12,9 +15,9 @@ function addorder(){
 
         var quantity = document.getElementById(thisid).value
 
-        var price = Number(table.rows[r+1].cells[2].innerHTML)
+        var price = Number(table.rows[r].cells[2].innerHTML)
 
-        var name = table.rows[r+1].cells[1].innerHTML
+        var name = table.rows[r].cells[1].innerHTML
 
         sum += (quantity * price).toFixed(2)
 
@@ -207,9 +210,9 @@ function keyup(){
         var indexarray = [];
         //console.log(tableheight)
         for (var i = 0; i < tableheight; i++){
-            if(i!=1) {
-                indexarray.push(i);
-            }
+            //if(i!=1) {
+            indexarray.push(i);
+            //}
         }
         //console.log(indexarray)
         while(cursor_pos<0){
@@ -246,9 +249,9 @@ function keydown_render(){
     var indexarray = [];
     //console.log(tableheight)
     for (var i = 0; i < tableheight; i++){
-        if(i!=1) {
+        //if(i!=1) {
             indexarray.push(i);
-        }          
+        //}          
     }
     //console.log(indexarray)
     while(cursor_pos<0){
@@ -287,6 +290,8 @@ function loadtable(){
 
     tbody.innerHTML = ""
     total_amount = 0
+    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
     for (x in menu_array){
 
         // Create an empty <tr> element and add it to the 1st position of the table:
@@ -305,8 +310,8 @@ function loadtable(){
         cell3.innerHTML = menuprice
         //console.log(menuprice)
         thisinputbox = 'course_quant' + (Number(x) + 1)
-        //console.log(thisinputbox)
-        cell4.innerHTML = '<input id="'+thisinputbox + '"">'
+        //console.log(thisinputbox) 
+        cell4.innerHTML =  width>640 ? '<input id="'+thisinputbox + '">' : ''
         //total_amount += menuprice
     }
 }

@@ -1,7 +1,10 @@
 jsonstring_order="["
-$("input").on("swiperight",function(){
-  console.log("right")
+$("tr").on("swiperight",function(){
+  this.style.backgroundColor='#0F0';
 });
+$( "tr" ).on( "click", function() {
+    this.style.backgroundColor='#FFF';
+} )
 function addorder(){
     var table = document.getElementById('mytable');
     var sum=0

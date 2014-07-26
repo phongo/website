@@ -2,6 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script language="javascript">
+      document.onmousedown=disableclick;
+      status="Right Click Disabled";
+      function disableclick(event)
+      {
+        if(event.button==2)
+         {
+           //alert(status);
+           return false;    
+         }
+      }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
     <meta charset="utf-8">
@@ -37,7 +49,7 @@
     <![endif]-->
   </head>
 
-  <body role="document" >
+  <body role="document" oncontextmenu="return false">
 
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">

@@ -3,6 +3,15 @@
 <html lang="en">
   <head>
     <script language="javascript">
+      var elmbody = document.body; // or some selection of the element you want to disable
+
+      var catcher = function(evt) {
+          if (evt.touches.length < 2)
+              evt.preventDefault();
+      };
+
+      elmbody.addEventListener('touchstart', catcher, true);
+
       document.onmousedown=disableclick;
       status="Right Click Disabled";
       function disableclick(event)
@@ -53,7 +62,7 @@
     <![endif]-->
   </head>
 
-  <body role="document" oncontextmenu="return false">
+  <body role="document" oncontextmenu="return false" style="-webkit-user-select: none;">
 
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">

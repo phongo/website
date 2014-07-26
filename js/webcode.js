@@ -2,6 +2,9 @@ jsonstring_order="["
 $("tr").on("swiperight",function(){
   this.style.backgroundColor='#0F0';
 });
+$("tr").on("swipeleft",function(){
+  this.style.backgroundColor='#00F';
+});
 $( "tr" ).on( "click", function() {
     this.style.backgroundColor='#FFF';
 } )

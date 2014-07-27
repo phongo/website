@@ -93,7 +93,7 @@ $("#mytable").on("swipeleft","#searchbar",function(){
   loadtable();
 });
 $("#ordertable").on("swipeleft","thead",function(){
-  window.location.replace('#mytable');
+  window.location.replace('#');
 });
 $("#mytable").on("swiperight","#searchbar",function(){
   clearit();

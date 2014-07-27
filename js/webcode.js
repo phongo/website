@@ -86,8 +86,8 @@ $("#mytablebody").on("swiperight","tr",function(){
     var cell4 = row.insertCell(3);
     cell1.innerHTML = "Total"
     cell3.innerHTML = (total_amount*1.0625).toFixed(2)
-    document.getElementById('searchbar').focus();
-    document.getElementById('searchbar').value = ""
+    //document.getElementById('searchbar').focus();
+    //document.getElementById('searchbar').value = ""
     table = document.getElementById('mytable');
     //table.rows[indexarray[(cursor_pos)%indexarray.length]].style.background = "#FFFFFF";
     cursor_pos = 0

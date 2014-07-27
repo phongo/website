@@ -15,7 +15,6 @@ $("#mytablebody").on("swipeleft","tr",function(){
 });
 $("#mytablebody").on("touchend","tr",function(){
   this.style.backgroundColor='#FFF';
-  clearit();
 });
 
 

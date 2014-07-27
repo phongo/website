@@ -1,8 +1,47 @@
 jsonstring_order="["
 
 $("#mytablebody").on("swiperight","tr",function(){
-  this.style.backgroundColor='#0F0';
-  clearit();
+    this.style.backgroundColor='#0F0';
+    var table = document.getElementById('mytable');
+    var sum=0
+    if (jsonstring_order!="["){
+        jsonstring_order = jsonstring_order.slice(0,-1)
+    }
+    for (var r = 1, n = table.rows.length-1; r < n; r++) {
+//        for (var c = 1, m = table.rows[r].cells.length; c < m; c++) {
+        //console.log(thisid)
+
+        var quantity = 1
+        var price = Number(table.rows[r].cells[2].innerHTML)
+        var name = table.rows[r].cells[1].innerHTML
+        sum += (quantity * price).toFixed(2)
+        if (quantity != 0) {
+
+            // Find a <table> element with id="myTable":
+            jsonstring_order += ']'
+            order_array = JSON.parse(jsonstring_order)
+            var exist = 0
+            for (x in order_array){
+                if (order_array[x]["name"] == name){
+                    order_array[x]["quantity"]+=1;
+                    exist = 1;
+                    jsonstring_order = JSON.stringify(order_array)
+                    jsonstring_order=jsonstring_order.slice(0,-1)
+                    break;
+                }
+            }
+           // console.log(jsonstring_order)
+            if (exist==0){
+                jsonstring_order=jsonstring_order.slice(0,-1)
+                if ( jsonstring_order != "[" ){
+                    jsonstring_order += ","
+                }
+                jsonstring_order += '{"name":"' + name +'","quantity":'+quantity+ ',"price":'+price +'}'
+            } 
+            
+            //alert(jsonstring_order)
+        }
+    clearit();
 });
 $("#mytable").on("swipeleft","#searchbar",function(){
   clearit();
@@ -35,13 +74,9 @@ function addorder(){
         //console.log(thisid)
 
         var quantity = document.getElementById(thisid).value
-
         var price = Number(table.rows[r].cells[2].innerHTML)
-
         var name = table.rows[r].cells[1].innerHTML
-
         sum += (quantity * price).toFixed(2)
-
         if (quantity != 0) {
 
             // Find a <table> element with id="myTable":

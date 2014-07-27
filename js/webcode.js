@@ -8,8 +8,8 @@ $("#mytablebody").on("swiperight","tr",function(){
         jsonstring_order = jsonstring_order.slice(0,-1)
     }
     var quantity = 1
-    var price = Number(this.cells[2].innerHTML)
-    var name = this.cells[1].innerHTML
+    var price = Number(this.cells[1].innerHTML)
+    var name = this.cells[0].innerHTML
     sum += (quantity * price).toFixed(2)
     if (quantity != 0) {
 
@@ -92,8 +92,8 @@ $("#mytablebody").on("swipeleft","tr",function(){
         jsonstring_order = jsonstring_order.slice(0,-1)
     }
     var quantity = 1
-    var price = Number(this.cells[2].innerHTML)
-    var name = this.cells[1].innerHTML
+    var price = Number(this.cells[1].innerHTML)
+    var name = this.cells[0].innerHTML
     sum += (quantity * price).toFixed(2)
     if (quantity != 0) {
 
@@ -201,8 +201,8 @@ $("#ordertablebody").on("swiperight","tr",function(){
         jsonstring_order = jsonstring_order.slice(0,-1)
     }
     var quantity = 1
-    var price = Number(this.cells[2].innerHTML)
-    var name = this.cells[1].innerHTML
+    var price = Number(this.cells[1].innerHTML)
+    var name = this.cells[0].innerHTML
     sum += (quantity * price).toFixed(2)
     if (quantity != 0) {
 
@@ -277,6 +277,7 @@ $("#ordertablebody").on("swiperight","tr",function(){
     clearit();
     document.getElementById("barprice").innerHTML="Total Price: "+ total_amount
 });   
+
 $("#ordertablebody").on("swipeleft","tr",function(){
     this.style.backgroundColor='#F00';
     var table = document.getElementById('mytable');
@@ -285,8 +286,8 @@ $("#ordertablebody").on("swipeleft","tr",function(){
         jsonstring_order = jsonstring_order.slice(0,-1)
     }
     var quantity = 1
-    var price = Number(this.cells[2].innerHTML)
-    var name = this.cells[1].innerHTML
+    var price = Number(this.cells[1].innerHTML)
+    var name = this.cells[0].innerHTML
     sum += (quantity * price).toFixed(2)
     if (quantity != 0) {
 

@@ -3,14 +3,6 @@
 <html lang="en">
   <head>
     <script language="javascript">
-      var elmbody = document.body; // or some selection of the element you want to disable
-
-      var catcher = function(evt) {
-          if (evt.touches.length < 2)
-              evt.preventDefault();
-      };
-
-      elmbody.addEventListener('touchstart', catcher, true);
 
       document.onmousedown=disableclick;
       status="Right Click Disabled";
@@ -103,11 +95,11 @@
             <thead style="text-align: center;">
               <tr>
                 <th colspan = "4">
-                  <input placeholder = "Search dishes...oh well...you don't need to move your mouse...just do it a priori "autofocus="autofocus" id = "searchbar" style = "border:none; box-sizing: border-box; width:100%; outline-width: 0;" onclick="clearit();">
+                  <input placeholder = "Search dishes...oh well...you don't need to move your mouse...just do it a priori "autofocus="autofocus" id = "searchbar" style = "border:none; box-sizing: border-box; width:100%; outline-width: 0;-webkit-user-select: none;user-select: none;" onclick="clearit();">
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="mytablebody">
             </tbody>
           </table>
         </span>

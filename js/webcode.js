@@ -1,11 +1,12 @@
 jsonstring_order="["
-$("#mytable").on("swiperight","tr",function(){
+
+$("#mytablebody").on("swiperight","tr",function(){
   this.style.backgroundColor='#0F0';
 });
-$("#mytable").on("swipeleft","tr",function(){
+$("#mytablebody").on("swipeleft","tr",function(){
   this.style.backgroundColor='#F00';
 });
-$("#mytable").on("touchend","tr",function(){
+$("#mytablebody").on("touchend","tr",function(){
   this.style.backgroundColor='#FFF';
 });
 

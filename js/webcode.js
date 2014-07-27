@@ -4,6 +4,9 @@ $("#mytablebody").on("swiperight","tr",function(){
   this.style.backgroundColor='#0F0';
   clearit();
 });
+$("#mytablebody").on("swipeleft","#searchbar",function(){
+  clearit();
+});
 $("#mytablebody").on("touchstart","tr",function(){
   this.style.backgroundColor='#0F0';
   clearit();

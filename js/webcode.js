@@ -92,6 +92,15 @@ $("#mytable").on("swipeleft","#searchbar",function(){
   menustring = '[]'
   loadtable();
 });
+
+$("#mytable").on("swiperight","#searchbar",function(){
+  clearit();
+  menustring = '[]'
+  loadtable();
+  window.location.replace('#ordertable');
+});
+
+
 $("#mytablebody").on("touchstart","tr",function(){
     document.getElementById("searchbar").blur();
 });

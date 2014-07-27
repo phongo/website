@@ -12,8 +12,8 @@ $("#mytablebody").on("swiperight","tr",function(){
         //console.log(thisid)
 
         var quantity = 1
-        var price = Number(table.rows[r].cells[2].innerHTML)
-        var name = table.rows[r].cells[1].innerHTML
+        var price = Number(this.cells[2].innerHTML)
+        var name = this.cells[1].innerHTML
         sum += (quantity * price).toFixed(2)
         if (quantity != 0) {
 
@@ -36,6 +36,7 @@ $("#mytablebody").on("swiperight","tr",function(){
                 if ( jsonstring_order != "[" ){
                     jsonstring_order += ","
                 }
+                console.log("lol")
                 jsonstring_order += '{"name":"' + name +'","quantity":'+quantity+ ',"price":'+price +'}'
             } 
             

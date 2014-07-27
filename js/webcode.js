@@ -3,6 +3,9 @@ jsonstring_order="["
 $("#mytablebody").on("swiperight","tr",function(){
   this.style.backgroundColor='#0F0';
 });
+$("#mytablebody").on("tap","tr",function(){
+  this.style.backgroundColor='#0F0';
+});
 $("#mytablebody").on("swipeleft","tr",function(){
   this.style.backgroundColor='#F00';
 });

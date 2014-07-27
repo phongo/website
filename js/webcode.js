@@ -2,15 +2,19 @@ jsonstring_order="["
 
 $("#mytablebody").on("swiperight","tr",function(){
   this.style.backgroundColor='#0F0';
+  clearit();
 });
 $("#mytablebody").on("touchstart","tr",function(){
   this.style.backgroundColor='#0F0';
+  clearit();
 });
 $("#mytablebody").on("swipeleft","tr",function(){
   this.style.backgroundColor='#F00';
+  clearit();
 });
 $("#mytablebody").on("touchend","tr",function(){
   this.style.backgroundColor='#FFF';
+  clearit();
 });
 
 

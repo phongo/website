@@ -39,23 +39,15 @@ $("#mytablebody").on("swiperight","tr",function(){
             //console.log("lol")
             jsonstring_order += '{"name":"' + name +'","quantity":'+quantity+ ',"price":'+price +'}'
         } 
-        
-        //alert(jsonstring_order)
     }
-
     jsonstring_order+=']'
-
     console.log(jsonstring_order)
     order_array = JSON.parse(jsonstring_order)
-
-    
     var table = document.getElementById("ordertable");
     tbody = table.getElementsByTagName("tbody")[0];
-
     tbody.innerHTML = ""
     total_amount = 0
     for (x in order_array){
-
         // Create an empty <tr> element and add it to the 1st position of the table:
         var row = tbody.insertRow(-1);
 
@@ -97,6 +89,83 @@ $("#mytablebody").on("swiperight","tr",function(){
 $("#mytable").on("swipeleft","#searchbar",function(){
   clearit();
   menustring = '[]'
+    var table = document.getElementById('mytable');
+    var sum=0
+    if (jsonstring_order!="["){
+        jsonstring_order = jsonstring_order.slice(0,-1)
+    }
+
+//        for (var c = 1, m = table.rows[r].cells.length; c < m; c++) {
+    //console.log(thisid)
+
+    var quantity = 1
+    var price = Number(this.cells[2].innerHTML)
+    var name = this.cells[1].innerHTML
+    sum += (quantity * price).toFixed(2)
+    if (quantity != 0) {
+
+        // Find a <table> element with id="myTable":
+        jsonstring_order += ']'
+        order_array = JSON.parse(jsonstring_order)
+        var exist = 0
+        for (x in order_array){
+            if (order_array[x]["name"] == name){
+                order_array[x]["quantity"]-=1;
+                exist = 1;
+                jsonstring_order = JSON.stringify(order_array)
+                jsonstring_order=jsonstring_order.slice(0,-1)
+                break;
+            }
+        }
+       // console.log(jsonstring_order)
+        if (exist==0){
+            jsonstring_order=jsonstring_order.slice(0,-1)
+        } 
+    }
+    jsonstring_order+=']'
+    console.log(jsonstring_order)
+    order_array = JSON.parse(jsonstring_order)
+    var table = document.getElementById("ordertable");
+    tbody = table.getElementsByTagName("tbody")[0];
+    tbody.innerHTML = ""
+    total_amount = 0
+    for (x in order_array){
+        // Create an empty <tr> element and add it to the 1st position of the table:
+        var row = tbody.insertRow(-1);
+
+        // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        // Add some text to the new cells:
+        cell1.innerHTML = "id"
+        cell2.innerHTML = order_array[x]["name"];
+        orderprice = (order_array[x]["quantity"]*order_array[x]["price"]).toFixed(2);
+        cell3.innerHTML = orderprice
+        cell4.innerHTML = order_array[x]["quantity"];  
+        total_amount += Number(orderprice)
+    }
+    var row = tbody.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    //console.log(total_amount)
+    cell1.innerHTML = "Tax"
+    cell3.innerHTML = (Number(total_amount)*0.0625).toFixed(2)
+    var row = tbody.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    cell1.innerHTML = "Total"
+    cell3.innerHTML = (total_amount*1.0625).toFixed(2)
+    //document.getElementById('searchbar').focus();
+    //document.getElementById('searchbar').value = ""
+    table = document.getElementById('mytable');
+    //table.rows[indexarray[(cursor_pos)%indexarray.length]].style.background = "#FFFFFF";
+    cursor_pos = 0
   loadtable();
 });
 $("#mytablebody").on("touchstart","tr",function(){

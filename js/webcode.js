@@ -92,7 +92,9 @@ $("#mytable").on("swipeleft","#searchbar",function(){
   menustring = '[]'
   loadtable();
 });
-
+$("#ordertable").on("swipeleft","thead",function(){
+  window.location.replace('#mytable');
+});
 $("#mytable").on("swiperight","#searchbar",function(){
   clearit();
   menustring = '[]'

@@ -89,7 +89,16 @@ $("#mytablebody").on("swiperight","tr",function(){
 $("#mytable").on("swipeleft","#searchbar",function(){
   clearit();
   menustring = '[]'
-    var table = document.getElementById('mytable');
+  loadtable();
+});
+$("#mytablebody").on("touchstart","tr",function(){
+    document.getElementById("searchbar").blur();
+});
+
+
+$("#mytablebody").on("swipeleft","tr",function(){
+  this.style.backgroundColor='#F00';
+      var table = document.getElementById('mytable');
     var sum=0
     if (jsonstring_order!="["){
         jsonstring_order = jsonstring_order.slice(0,-1)
@@ -111,6 +120,12 @@ $("#mytable").on("swipeleft","#searchbar",function(){
         for (x in order_array){
             if (order_array[x]["name"] == name){
                 order_array[x]["quantity"]-=1;
+                if (order_array[x]["quantity"]==0){
+                    console.log('~~')
+                    var index = order_array.indexOf(x);
+                    console.log("hehe"+x)
+                    order_array.splice(x, 1);
+                }
                 exist = 1;
                 jsonstring_order = JSON.stringify(order_array)
                 jsonstring_order=jsonstring_order.slice(0,-1)
@@ -166,15 +181,6 @@ $("#mytable").on("swipeleft","#searchbar",function(){
     table = document.getElementById('mytable');
     //table.rows[indexarray[(cursor_pos)%indexarray.length]].style.background = "#FFFFFF";
     cursor_pos = 0
-  loadtable();
-});
-$("#mytablebody").on("touchstart","tr",function(){
-    document.getElementById("searchbar").blur();
-});
-
-
-$("#mytablebody").on("swipeleft","tr",function(){
-  this.style.backgroundColor='#F00';
   clearit();
 });
 $("#mytablebody").on("touchend","tr",function(){

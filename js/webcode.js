@@ -7,7 +7,7 @@ $("#mytablebody").on("swiperight","tr",function(){
     if (jsonstring_order!="["){
         jsonstring_order = jsonstring_order.slice(0,-1)
     }
-    for (var r = 1, n = table.rows.length-1; r < n; r++) {
+    for (var r = 1, n = table.rows.length; r < n; r++) {
 //        for (var c = 1, m = table.rows[r].cells.length; c < m; c++) {
         //console.log(thisid)
 
@@ -36,7 +36,7 @@ $("#mytablebody").on("swiperight","tr",function(){
                 if ( jsonstring_order != "[" ){
                     jsonstring_order += ","
                 }
-                console.log("lol")
+                //console.log("lol")
                 jsonstring_order += '{"name":"' + name +'","quantity":'+quantity+ ',"price":'+price +'}'
             } 
             
@@ -44,7 +44,8 @@ $("#mytablebody").on("swiperight","tr",function(){
         }
     }
     jsonstring_order+=']'
-    //console.log(jsonstring_order)
+
+    console.log(jsonstring_order)
     order_array = JSON.parse(jsonstring_order)
 
     

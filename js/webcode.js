@@ -10,7 +10,7 @@ $("#mytable").on("swipeleft","#searchbar",function(){
   loadtable();
 });
 $("#mytablebody").on("touchstart","tr",function(){
-    $("#searchbar").blur();
+    document.getElementById("searchbar").blur();
 });
 
 

@@ -9,6 +9,11 @@ $("#mytable").on("swipeleft","#searchbar",function(){
   menustring = '[]'
   loadtable();
 });
+$("#mytablebody").on("touchstart","tr",function(){
+    $("#searchbar").blur();
+});
+
+
 $("#mytablebody").on("swipeleft","tr",function(){
   this.style.backgroundColor='#F00';
   clearit();

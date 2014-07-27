@@ -6,6 +6,7 @@ $("#mytablebody").on("swiperight","tr",function(){
 });
 $("#mytable").on("swipeleft","#searchbar",function(){
   clearit();
+  menustring = '[]'
   loadtable();
 });
 $("#mytablebody").on("touchstart","tr",function(){

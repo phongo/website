@@ -51,13 +51,14 @@ $("#mytablebody").on("swiperight","tr",function(){
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
+        
         // Add some text to the new cells:
-        cell1.innerHTML = "id"
-        cell2.innerHTML = order_array[x]["name"];
+        //cell1.innerHTML = "id"
+        cell1.innerHTML = order_array[x]["name"];
+        cell1.colSpan="2"
         orderprice = (order_array[x]["quantity"]*order_array[x]["price"]).toFixed(2);
-        cell3.innerHTML = orderprice
-        cell4.innerHTML = order_array[x]["quantity"];  
+        cell2.innerHTML = orderprice
+        cell3.innerHTML = order_array[x]["quantity"];  
         total_amount += Number(orderprice)
     }
     var row = tbody.insertRow(-1);
@@ -129,17 +130,19 @@ $("#mytablebody").on("swipeleft","tr",function(){
     for (x in order_array){
         // Create an empty <tr> element and add it to the 1st position of the table:
         var row = tbody.insertRow(-1);
+
         // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
+        
         // Add some text to the new cells:
-        cell1.innerHTML = "id"
-        cell2.innerHTML = order_array[x]["name"];
+        //cell1.innerHTML = "id"
+        cell1.innerHTML = order_array[x]["name"];
+        cell1.colSpan="2"
         orderprice = (order_array[x]["quantity"]*order_array[x]["price"]).toFixed(2);
-        cell3.innerHTML = orderprice
-        cell4.innerHTML = order_array[x]["quantity"];  
+        cell2.innerHTML = orderprice
+        cell3.innerHTML = order_array[x]["quantity"];  
         total_amount += Number(orderprice)
     }
     var row = tbody.insertRow(-1);
@@ -241,13 +244,14 @@ $("#ordertablebody").on("swiperight","tr",function(){
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
+        
         // Add some text to the new cells:
-        cell1.innerHTML = "id"
-        cell2.innerHTML = order_array[x]["name"];
+        //cell1.innerHTML = "id"
+        cell1.innerHTML = order_array[x]["name"];
+        cell1.colSpan="2"
         orderprice = (order_array[x]["quantity"]*order_array[x]["price"]).toFixed(2);
-        cell3.innerHTML = orderprice
-        cell4.innerHTML = order_array[x]["quantity"];  
+        cell2.innerHTML = orderprice
+        cell3.innerHTML = order_array[x]["quantity"];  
         total_amount += Number(orderprice)
     }
     var row = tbody.insertRow(-1);
@@ -319,17 +323,19 @@ $("#ordertablebody").on("swipeleft","tr",function(){
     for (x in order_array){
         // Create an empty <tr> element and add it to the 1st position of the table:
         var row = tbody.insertRow(-1);
+
         // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
+        
         // Add some text to the new cells:
-        cell1.innerHTML = "id"
-        cell2.innerHTML = order_array[x]["name"];
+        //cell1.innerHTML = "id"
+        cell1.innerHTML = order_array[x]["name"];
+        cell1.colSpan="2"
         orderprice = (order_array[x]["quantity"]*order_array[x]["price"]).toFixed(2);
-        cell3.innerHTML = orderprice
-        cell4.innerHTML = order_array[x]["quantity"];  
+        cell2.innerHTML = orderprice
+        cell3.innerHTML = order_array[x]["quantity"];  
         total_amount += Number(orderprice)
     }
     var row = tbody.insertRow(-1);

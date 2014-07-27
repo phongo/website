@@ -6,6 +6,7 @@ $("#mytablebody").on("swiperight","tr",function(){
 });
 $("#mytable").on("swipeleft","#searchbar",function(){
   clearit();
+  loadtable();
 });
 $("#mytablebody").on("touchstart","tr",function(){
   this.style.backgroundColor='#0F0';

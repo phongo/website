@@ -95,6 +95,9 @@ $("#mytable").on("swipeleft","#searchbar",function(){
 $("#ordertable").on("swipeleft","thead",function(){
   window.location.replace('#');
 });
+$("#ordertablebody").on("swipeleft","tr",function(){
+  this.style.backgroundColor='#0F0';
+});
 $("#mytable").on("swiperight","#searchbar",function(){
   clearit();
   menustring = '[]'

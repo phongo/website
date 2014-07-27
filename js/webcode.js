@@ -85,6 +85,7 @@ $("#mytablebody").on("swiperight","tr",function(){
     //table.rows[indexarray[(cursor_pos)%indexarray.length]].style.background = "#FFFFFF";
     cursor_pos = 0
     clearit();
+    document.getElementById("barprice").innerHTML="Total Price: "+ total_amount
 });
 $("#mytable").on("swipeleft","#searchbar",function(){
   clearit();
@@ -181,7 +182,8 @@ $("#mytablebody").on("swipeleft","tr",function(){
     table = document.getElementById('mytable');
     //table.rows[indexarray[(cursor_pos)%indexarray.length]].style.background = "#FFFFFF";
     cursor_pos = 0
-  clearit();
+    clearit();
+    document.getElementById("barprice").innerHTML="Total Price: "+ total_amount
 });
 $("#mytablebody").on("touchend","tr",function(){
   this.style.backgroundColor='#FFF';
@@ -278,6 +280,7 @@ function addorder(){
     table = document.getElementById('mytable');
     //table.rows[indexarray[(cursor_pos)%indexarray.length]].style.background = "#FFFFFF";
     cursor_pos = 0
+    document.getElementById("barprice").innerHTML="Total Price: "+ total_amount
 }
 
 function genqrcode(){
